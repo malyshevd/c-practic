@@ -1,0 +1,11 @@
+D:\LAV\Other\Projects\c-practic\c-practic\bin\Debug\c-practic.exe.config
+D:\LAV\Other\Projects\c-practic\c-practic\bin\Debug\c-practic.exe
+D:\LAV\Other\Projects\c-practic\c-practic\bin\Debug\c-practic.pdb
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.Properties.Resources.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.csproj.GenerateResource.cache
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.exe
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.pdb
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.Controls.CalcComplexNthRootsControl.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.MainForm.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.csprojAssemblyReference.cache
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.DrawComplexRootsForm.resources

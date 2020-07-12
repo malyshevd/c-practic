@@ -1,0 +1,11 @@
+D:\LAV\Other\Projects\c-practic\c-practic\bin\Release\c-practic.exe.config
+D:\LAV\Other\Projects\c-practic\c-practic\bin\Release\c-practic.exe
+D:\LAV\Other\Projects\c-practic\c-practic\bin\Release\c-practic.pdb
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c-practic.csprojAssemblyReference.cache
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c_practic.Properties.Resources.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c-practic.csproj.GenerateResource.cache
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c-practic.exe
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c-practic.pdb
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c_practic.Controls.CalcComplexNthRootsControl.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c_practic.MainForm.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Release\c_practic.DrawPolygonForm.resources

@@ -11,7 +11,8 @@ namespace c_practic.Controls
     public partial class CalcComplexNthRootsControl : UserControl
     {
         public Complex CurentComplex => new Complex((double)numReal.Value, (double)numImaginary.Value);
-        public string CurentComplexStr => CurentComplex.ToString((int)numDecimals.Value);
+        public int Decimals => (int)numDecimals.Value;
+        public string CurentComplexStr => CurentComplex.ToString(Decimals);
         public int NtxRootValue => (int)numNtxRoot.Value;
         public Complex[] LastCalcRoots { get; private set; }
         public event Action<object, string> СalculationСompleted;
@@ -31,14 +32,14 @@ namespace c_practic.Controls
         private void btnCalc_Click(object sender, EventArgs e)
         {
             LastCalcRoots = CurentComplex.CalcNthRoots(NtxRootValue)
-                .Select(c => new Complex(Math.Round(c.Real, (int)numDecimals.Value), Math.Round(c.Imaginary, (int)numDecimals.Value))).ToArray();
+                .Select(c => new Complex(Math.Round(c.Real, Decimals), Math.Round(c.Imaginary, Decimals))).ToArray();
             StringBuilder sbResult = new StringBuilder();
             sbResult.AppendLine($"Комплексное число: {CurentComplexStr}");
             sbResult.AppendLine($"Степень вычисляемого корня: {(int)numNtxRoot.Value}");
             sbResult.AppendLine();
             for (int i = 0; i < LastCalcRoots.Length; i++)
             {
-                sbResult.AppendLine($"Корень №{i + 1}: {LastCalcRoots[i].ToString((int)numDecimals.Value)}");
+                sbResult.AppendLine($"Корень №{i + 1}: {LastCalcRoots[i].ToString(Decimals)}");
             }
             rtbResult.Text = sbResult.ToString();
 

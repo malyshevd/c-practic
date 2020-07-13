@@ -13,6 +13,7 @@ namespace c_practic
 {
     public partial class MainForm : Form
     {
+        private DrawComplexRootsForm drawComplexRootsForm;
         public MainForm()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace c_practic
 
         private void InitControls()
         {
+            drawComplexRootsForm = new DrawComplexRootsForm();
             calcComplexNthRootsControl.СalculationСompleted += CalcComplexNthRootsControl_СalculationСompleted;
         }
 
@@ -30,13 +32,9 @@ namespace c_practic
             var confirmResult = MessageBox.Show("Показать график", "Подтверждение", MessageBoxButtons.YesNo);
             if (confirmResult == DialogResult.Yes)
             {
-                new DrawComplexRootsForm(control.LastCalcRoots, 100, $"График для корня {control.NtxRootValue}-ст. компл. числа: {control.CurentComplexStr}").ShowDialog();
+                drawComplexRootsForm.SetParameters(control.LastCalcRoots, control.Decimals, title: $"График для корня {control.NtxRootValue}-ст. компл. числа: {control.CurentComplexStr}");
+                drawComplexRootsForm.ShowDialog();
             }
-        }
-
-        private void btnShowGraph_Click(object sender, EventArgs e)
-        {
-            new DrawComplexRootsForm(calcComplexNthRootsControl.LastCalcRoots, 100, "Test").ShowDialog();
         }
     }
 }

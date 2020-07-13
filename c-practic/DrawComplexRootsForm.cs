@@ -19,6 +19,7 @@ namespace c_practic
         private Complex[] ComplexRoots;
         private int ScalePixel = 100;
         private const int ScaleDiff = 10;
+        private int Decimals = 2;
         private PointF[] ScaleCentredPoints => ComplexRoots?.Select(c => new PointF((float)c.Real * ScalePixel + (float)Width / 2,
             -1 * (float)c.Imaginary * ScalePixel + (float)Height / 2)).ToArray();
 
@@ -37,12 +38,28 @@ namespace c_practic
         public DrawComplexRootsForm()
         {
             InitializeComponent();
-            this.MouseWheel += DrawComplexRootsForm_MouseWheel;
+            MouseWheel += DrawComplexRootsForm_MouseWheel;
+        }
+
+        public DrawComplexRootsForm(Complex[] complexRoots, int decimals = 2, int? scalePixel = null, string title = "Полигон") : this()
+        {
+            SetParameters(complexRoots, decimals, scalePixel, title);
+        }
+
+        public void SetParameters(Complex[] complexRoots, int decimals, int? scalePixel = null, string title = "Полигон")
+        {
+            ComplexRoots = complexRoots?.Length > 1 ? complexRoots : throw new ArgumentException("Обязательно миниму 2 корня", nameof(complexRoots));
+            Decimals = decimals;
+            if (scalePixel != null)
+            {
+                ScalePixel = scalePixel.Value;
+            }
+            Text = title;
         }
 
         private void DrawComplexRootsForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            if(e.Delta > 0)
+            if (e.Delta > 0)
             {
                 btnScaleDdecrease_Click(null, null);
             }
@@ -52,32 +69,38 @@ namespace c_practic
             }
         }
 
-        public DrawComplexRootsForm(Complex[] complexRoots, int scalePixel = 100, string title = "Полигон") : this()
-        {
-            ComplexRoots = complexRoots?.Length > 1 ? complexRoots : throw new ArgumentException("Обязательно миниму 2 корня", nameof(complexRoots));
-            ScalePixel = scalePixel;
-            Text = title;
-        }
-
 
         private void DrawPolygonForm_Paint(object sender, PaintEventArgs e)
         {
             if (cbShowGrid.Checked)
             {
+                //Рисуем сетку если включен чекбокс
                 DrawGrid(e.Graphics);
             }
+            //Рисуем систему координат
             DrawCoorinatesLine2D(e.Graphics);
 
+            //Рисуем многоугольник из корней комплекного числа
             e.Graphics.DrawPolygon(_polygonPen, ScaleCentredPoints);
-            float radius = (float)CircleRadius;
-            e.Graphics.DrawEllipse(_circlePen, new RectangleF((float)Width / 2 - radius * ScalePixel, (float)Height / 2 - radius * ScalePixel, radius * ScalePixel * 2, radius * ScalePixel * 2));
+            //Рисуем окружность в которую вписан правильный многоугольник из корней комплексного числа
+            DrawCircle(e.Graphics);
 
+            //Выделяем точки корней комплексного числа и пишем их координаты
             PointF[] points = ScaleCentredPoints;
             for (int i = 0; i < points?.Length; i++)
             {
                 e.Graphics.FillEllipse(Brushes.Red, points[i].X - 5, points[i].Y - 5, 10, 10);
                 e.Graphics.DrawString($"( {ComplexRoots[i].Real}; {ComplexRoots[i].Imaginary} )", new Font(Font.FontFamily, 12, FontStyle.Bold), new SolidBrush(Color.Red), points[i].X + 5, points[i].Y + 5);
             }
+        }
+
+        private void DrawCircle(Graphics g)
+        {
+            float radius = (float)CircleRadius;
+            g.DrawEllipse(_circlePen, new RectangleF((float)Width / 2 - radius * ScalePixel, (float)Height / 2 - radius * ScalePixel, radius * ScalePixel * 2, radius * ScalePixel * 2));
+            float radiusLength = radius / (float)Math.Sqrt(2);
+            g.DrawLine(_circlePen, (float)Width / 2, (float)Height / 2, (float)Width / 2 + radiusLength * ScalePixel, (float)Height / 2 - radiusLength * ScalePixel);
+            g.DrawString($"r = {Math.Round(radiusLength, Decimals).ToString()}", new Font(Font.FontFamily, 12, FontStyle.Bold), Brushes.Red, (float)Width / 2 + radiusLength / 2 * ScalePixel, (float)Height / 2 - radiusLength / 2 * ScalePixel);
         }
 
         private void DrawGrid(Graphics g)

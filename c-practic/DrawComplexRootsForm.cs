@@ -98,9 +98,10 @@ namespace c_practic
         {
             float radius = (float)CircleRadius;
             g.DrawEllipse(_circlePen, new RectangleF((float)Width / 2 - radius * ScalePixel, (float)Height / 2 - radius * ScalePixel, radius * ScalePixel * 2, radius * ScalePixel * 2));
-            float radiusLength = radius / (float)Math.Sqrt(2);
-            g.DrawLine(_circlePen, (float)Width / 2, (float)Height / 2, (float)Width / 2 + radiusLength * ScalePixel, (float)Height / 2 - radiusLength * ScalePixel);
-            g.DrawString($"r = {Math.Round(radiusLength, Decimals).ToString()}", new Font(Font.FontFamily, 12, FontStyle.Bold), Brushes.Red, (float)Width / 2 + radiusLength / 2 * ScalePixel, (float)Height / 2 - radiusLength / 2 * ScalePixel);
+            float legLength = radius / (float)Math.Sqrt(2);
+            double radiusLength = Math.Sqrt(2 * Math.Pow(legLength, 2));
+            g.DrawLine(_circlePen, (float)Width / 2, (float)Height / 2, (float)Width / 2 + legLength * ScalePixel, (float)Height / 2 - legLength * ScalePixel);
+            g.DrawString($"r = {Math.Round(radiusLength, Decimals).ToString()}", new Font(Font.FontFamily, 12, FontStyle.Bold), Brushes.Red, (float)Width / 2 + legLength / 2 * ScalePixel, (float)Height / 2 - legLength / 2 * ScalePixel);
         }
 
         private void DrawGrid(Graphics g)

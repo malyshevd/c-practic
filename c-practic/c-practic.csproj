@@ -53,6 +53,12 @@
     <Compile Include="Controls\CalcComplexNthRootsControl.Designer.cs">
       <DependentUpon>CalcComplexNthRootsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\CalcSLAE_ByCholeskyMethodControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CalcSLAE_ByCholeskyMethodControl.Designer.cs">
+      <DependentUpon>CalcSLAE_ByCholeskyMethodControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="DrawComplexRootsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,7 @@
       <DependentUpon>DrawComplexRootsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions\ComplexExtension.cs" />
+    <Compile Include="Extensions\MatrixExtension.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,8 +75,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowLongTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowLongTextForm.Designer.cs">
+      <DependentUpon>ShowLongTextForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Controls\CalcComplexNthRootsControl.resx">
       <DependentUpon>CalcComplexNthRootsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CalcSLAE_ByCholeskyMethodControl.resx">
+      <DependentUpon>CalcSLAE_ByCholeskyMethodControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DrawComplexRootsForm.resx">
       <DependentUpon>DrawComplexRootsForm.cs</DependentUpon>
@@ -86,6 +102,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowLongTextForm.resx">
+      <DependentUpon>ShowLongTextForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

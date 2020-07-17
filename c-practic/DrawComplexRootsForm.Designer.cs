@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.btnScaleRise = new System.Windows.Forms.Button();
-            this.btnScaleDdecrease = new System.Windows.Forms.Button();
-            this.labelScale = new System.Windows.Forms.Label();
             this.cbShowGrid = new System.Windows.Forms.CheckBox();
+            this.labelScale = new System.Windows.Forms.Label();
+            this.btnScaleDdecrease = new System.Windows.Forms.Button();
+            this.btnScaleRise = new System.Windows.Forms.Button();
             this.panelSettings.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,35 +48,6 @@
             this.panelSettings.Size = new System.Drawing.Size(202, 62);
             this.panelSettings.TabIndex = 0;
             // 
-            // btnScaleRise
-            // 
-            this.btnScaleRise.Location = new System.Drawing.Point(74, 3);
-            this.btnScaleRise.Name = "btnScaleRise";
-            this.btnScaleRise.Size = new System.Drawing.Size(55, 23);
-            this.btnScaleRise.TabIndex = 0;
-            this.btnScaleRise.Text = "+";
-            this.btnScaleRise.UseVisualStyleBackColor = true;
-            this.btnScaleRise.Click += new System.EventHandler(this.btnScaleRise_Click);
-            // 
-            // btnScaleDdecrease
-            // 
-            this.btnScaleDdecrease.Location = new System.Drawing.Point(135, 3);
-            this.btnScaleDdecrease.Name = "btnScaleDdecrease";
-            this.btnScaleDdecrease.Size = new System.Drawing.Size(55, 23);
-            this.btnScaleDdecrease.TabIndex = 1;
-            this.btnScaleDdecrease.Text = "-";
-            this.btnScaleDdecrease.UseVisualStyleBackColor = true;
-            this.btnScaleDdecrease.Click += new System.EventHandler(this.btnScaleDdecrease_Click);
-            // 
-            // labelScale
-            // 
-            this.labelScale.AutoSize = true;
-            this.labelScale.Location = new System.Drawing.Point(15, 8);
-            this.labelScale.Name = "labelScale";
-            this.labelScale.Size = new System.Drawing.Size(53, 13);
-            this.labelScale.TabIndex = 2;
-            this.labelScale.Text = "Масштаб";
-            // 
             // cbShowGrid
             // 
             this.cbShowGrid.AutoSize = true;
@@ -89,13 +60,44 @@
             this.cbShowGrid.UseVisualStyleBackColor = true;
             this.cbShowGrid.CheckedChanged += new System.EventHandler(this.cbShowGrid_CheckedChanged);
             // 
+            // labelScale
+            // 
+            this.labelScale.AutoSize = true;
+            this.labelScale.Location = new System.Drawing.Point(15, 8);
+            this.labelScale.Name = "labelScale";
+            this.labelScale.Size = new System.Drawing.Size(53, 13);
+            this.labelScale.TabIndex = 2;
+            this.labelScale.Text = "Масштаб";
+            // 
+            // btnScaleDdecrease
+            // 
+            this.btnScaleDdecrease.Location = new System.Drawing.Point(135, 3);
+            this.btnScaleDdecrease.Name = "btnScaleDdecrease";
+            this.btnScaleDdecrease.Size = new System.Drawing.Size(55, 23);
+            this.btnScaleDdecrease.TabIndex = 1;
+            this.btnScaleDdecrease.Text = "-";
+            this.btnScaleDdecrease.UseVisualStyleBackColor = true;
+            this.btnScaleDdecrease.Click += new System.EventHandler(this.btnScaleDdecrease_Click);
+            // 
+            // btnScaleRise
+            // 
+            this.btnScaleRise.Location = new System.Drawing.Point(74, 3);
+            this.btnScaleRise.Name = "btnScaleRise";
+            this.btnScaleRise.Size = new System.Drawing.Size(55, 23);
+            this.btnScaleRise.TabIndex = 0;
+            this.btnScaleRise.Text = "+";
+            this.btnScaleRise.UseVisualStyleBackColor = true;
+            this.btnScaleRise.Click += new System.EventHandler(this.btnScaleRise_Click);
+            // 
             // DrawComplexRootsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelSettings);
+            this.MinimizeBox = false;
             this.Name = "DrawComplexRootsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DrawCoplexRoots";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.DrawPolygonForm_Paint);
             this.panelSettings.ResumeLayout(false);

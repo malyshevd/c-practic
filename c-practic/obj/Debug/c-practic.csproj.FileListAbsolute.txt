@@ -7,5 +7,6 @@ D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.exe
 D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.pdb
 D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.Controls.CalcComplexNthRootsControl.resources
 D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.MainForm.resources
-D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c-practic.csprojAssemblyReference.cache
 D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.DrawComplexRootsForm.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.Controls.CalcSLAE_ByCholeskyMethodControl.resources
+D:\LAV\Other\Projects\c-practic\c-practic\obj\Debug\c_practic.ShowLongTextForm.resources
